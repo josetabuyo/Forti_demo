@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Environment variables (sensible)
+.env
+backend/.env
+
+# Base de datos SQLite
+*.db
+*.sqlite
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.playwright-cli/
+
+# Agent / session local
+.agent.json
+session/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
