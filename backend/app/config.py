@@ -17,8 +17,14 @@ class Settings(BaseSettings):
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ]
+    # CORS_EXTRA_ORIGINS="https://forti-demo.vercel.app,https://otro.com"
+    cors_extra_origins: str = ""
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    def all_cors_origins(self) -> list[str]:
+        extra = [o.strip() for o in self.cors_extra_origins.split(",") if o.strip()]
+        return self.cors_origins + extra
 
 
 @lru_cache
